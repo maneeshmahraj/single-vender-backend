@@ -1,4 +1,4 @@
-const User = require('../models/usersModel');
+const UserModel = require('../models/usersModel');
 
 // Register user
 exports.registerUser = async (req, res) => {
@@ -10,13 +10,13 @@ exports.registerUser = async (req, res) => {
       return res.status(400).json({ message: 'All fields are required' });
     }
 
-    const existingUser = await User.findOne({phoneNumber });
+    const existingUser = await UserModel.findOne();
     console.log(existingUser)
     if (existingUser) {
       return res.status(400).json({ message: 'Phone number already registered' });
     }
 
-    const newUser = await new User({ name, phoneNumber, countryCode });
+    const newUser = await new UserModel({ name, phoneNumber, countryCode });
     await newUser.save();
     console.log(newUser)
     res.status(201).json({ message: 'User registered successfully', user:newUser });
