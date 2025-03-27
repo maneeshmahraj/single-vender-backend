@@ -7,6 +7,6 @@ const userSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 // Prevent overwriting the model if it already exists
-const User = mongoose.models.User || mongoose.model('UserAdminmodel', userSchema);
+const User = mongoose.models.User || mongoose.model('UserAdmin', userSchema);
 
 module.exports = User;

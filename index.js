@@ -10,6 +10,7 @@ const loginRoute = require('./routes/loginRoute');
 const otpRoute = require('./routes/otpRoute');
 const userRoute = require('./routes/userRoute');
 const homeRoute = require('./routes/homeRoute');
+const categoriesRoute = require('./routes/categoriesRoute');
 const { setupSocket } = require('./utils/socketio');
 const messageRoutes = require('./routes/message');
 const cors = require('cors')
@@ -39,6 +40,7 @@ app.use('/login', loginRoute);
 app.use('/otp', otpRoute);
 app.use('/user', userRoute);
 app.use('/home', homeRoute);
+app.use('/category', categoriesRoute);
 app.listen(port, ()=>{
     console.log("app run on:  "+port)
 })

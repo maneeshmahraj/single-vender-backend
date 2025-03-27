@@ -1,5 +1,7 @@
 const paymentModel=require("../models/paymentModel")
-const Product = require("../models/productModel");
+
+const {  Product } = require("../models/categoriesModel");
+
 const paymentData=async(req,res)=>{
     try {
         const payment = new paymentModel(req.body);
@@ -30,9 +32,7 @@ const searchProduct=async(req,res)=>{
   try {
     const products = await Product.find();
 
-    if (!products) {
-      res.status(404).json({ success: false, message: "No products found" });
-    }
+   
 
     res.status(200).json({
       success: true,

@@ -10,7 +10,7 @@ exports.registerUser = async (req, res) => {
       return res.status(400).json({ message: 'All fields are required' });
     }
 
-    const existingUser = await UserModel.findOne();
+    const existingUser = await UserModel.findOne({phoneNumber});
     console.log(existingUser)
     if (existingUser) {
       return res.status(400).json({ message: 'Phone number already registered' });
