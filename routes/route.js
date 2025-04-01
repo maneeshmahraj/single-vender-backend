@@ -4,5 +4,5 @@ const paymentController=require("../controllers/paymentController")
 
 router.post("/payment",paymentController.paymentData)
 router.post("/checkout",paymentController.checkOut)
-router.post("/searchproduct",paymentController.searchProduct)
+router.get("/searchproduct",paymentController.searchProduct)
 module.exports=router;
