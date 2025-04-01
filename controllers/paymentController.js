@@ -30,9 +30,8 @@ const checkOut=async (req, res) => {
   }
 const searchProduct=async(req,res)=>{
   try {
-    const products = await Product.find();
-
-   
+    const {category}=req.body
+    const products = await Product.find({category});
 
     res.status(200).json({
       success: true,
