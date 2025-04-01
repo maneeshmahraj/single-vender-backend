@@ -10,5 +10,4 @@ const OrderSchema = new mongoose.Schema({
     totalPrice: Number,
   });
   
-const Order = mongoose.model("Order", OrderSchema);
-  module.exports=Order
+  module.exports = mongoose.model("OrderPayment", OrderSchema);

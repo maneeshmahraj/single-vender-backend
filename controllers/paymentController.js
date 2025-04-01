@@ -1,5 +1,5 @@
 const paymentModel=require("../models/paymentModel")
-
+const Order=require("../models/orderModel")
 const {  Product } = require("../models/categoriesModel");
 
 const paymentData=async(req,res)=>{
